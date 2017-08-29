@@ -7,4 +7,4 @@ modprobe i2c-dev
 systemctl start epd-fuse.service
 
 # Draw nice logo
-papirus-draw /app/resinos-logo.jpg
+papirus-draw /app/logo.png

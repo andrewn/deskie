@@ -25,7 +25,7 @@ RUN mkdir /tmp/gratis \
 
 COPY ./epd-fuse/epd-fuse.configuration /etc/default/epd-fuse
 COPY ./run.sh /app/run.sh
-COPY ./resinos-logo.jpg /app/resinos-logo.jpg
+COPY ./logo.png /app/logo.png
 
 # Systemd please
 ENV INITSYSTEM on
