@@ -1,4 +1,14 @@
-FROM resin/rpi-raspbian:jessie
+# Pi 1 or Zero
+# FROM resin/raspberry-pi-debian:stretch
+
+# Pi 2
+# FROM resin/raspberry-pi2-debian:stretch
+
+# Pi 3
+FROM resin/raspberrypi3-debian:stretch
+
+# Templates (don't work)
+# FROM resin/%%RESIN_MACHINE_NAME%%-debian:stretch
 
 # Install needed packages
 RUN apt-get update \
