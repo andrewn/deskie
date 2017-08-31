@@ -12,7 +12,22 @@ FROM resin/raspberrypi3-debian:stretch
 
 # Install needed packages
 RUN apt-get update \
-    && apt-get install libfuse-dev fonts-freefont-ttf git python-imaging bc i2c-tools make pkg-config gcc -y \
+    && apt-get install -y \
+        libfuse-dev \
+        fonts-freefont-ttf \
+        git \
+        python2.7 \
+        python-dateutil \
+        python-pip \
+        python-imaging \
+        python-smbus \
+        bc \
+        i2c-tools \
+        make \
+        pkg-config \
+        gcc \
+    # Clean up to save space
+    && apt-get clean \
     # Remove package lists to free up space
     && rm -rf /var/lib/apt/lists/*
 
