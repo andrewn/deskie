@@ -38,6 +38,11 @@ RUN mkdir /tmp/papirus \
     && python setup.py install \
     && rm -rf /tmp/papirus
 
+# For some reason, the LM75B temp module doesn't work
+# so this explicitly
+RUN sed -i 's/self\._lm75b = LM75B()/self\._lm75b = None/g' /usr/local/lib/python2.7/dist-packages/papirus/epd.py
+RUN sed -i 's/self\._uselm75b = True/self\._uselm75b = False/g' /usr/local/lib/python2.7/dist-packages/papirus/epd.py
+
 # Install the driver
 RUN mkdir /tmp/gratis \
     && git clone https://github.com/repaper/gratis.git /tmp/gratis \
