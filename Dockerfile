@@ -17,8 +17,7 @@ RUN mkdir /tmp/papirus \
 # Install the driver
 RUN mkdir /tmp/gratis \
     && git clone https://github.com/repaper/gratis.git /tmp/gratis \
-    && cd /tmp/gratis/PlatformWithOS \
-    && git checkout ab46fd7 \
+    && cd /tmp/gratis \
     && make rpi PANEL_VERSION=V231_G2 \
     && make rpi-install PANEL_VERSION=V231_G2 \
     && rm -rf /tmp/gratis
