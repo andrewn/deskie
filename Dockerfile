@@ -35,7 +35,6 @@ RUN apt-get update \
 RUN mkdir /tmp/papirus \
     && git clone https://github.com/PiSupply/PaPiRus.git /tmp/papirus \
     && cd /tmp/papirus \
-    && git checkout 3e768f06dad50a0656e3b58235644dfb801028f0 \
     && python setup.py install \
     && rm -rf /tmp/papirus
 
