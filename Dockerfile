@@ -25,11 +25,7 @@ RUN apt-get update \
         i2c-tools \
         make \
         pkg-config \
-        gcc \
-    # Clean up to save space
-    && apt-get clean \
-    # Remove package lists to free up space
-    && rm -rf /var/lib/apt/lists/*
+        gcc
 
 # Install PaPiRus
 RUN mkdir /tmp/papirus \
@@ -55,6 +51,21 @@ RUN mkdir /tmp/gratis \
 COPY ./epd-fuse/epd-fuse.configuration /etc/default/epd-fuse
 COPY ./run.sh /app/run.sh
 COPY ./logo.png /app/logo.png
+
+
+# Install Chromium
+# TODO: This could be done with the other apt-get above 
+#       for efficiency
+RUN apt-get update \
+    && apt-get install -y \
+        chromium \
+        imagemagick
+
+# Clean up packaging cruft
+RUN apt-get clean \
+    # Remove package lists to free up space
+    && rm -rf /var/lib/apt/lists/*
+
 
 # Systemd please
 ENV INITSYSTEM on
