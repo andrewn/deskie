@@ -1,0 +1,9 @@
+[Unit]
+Description=Fetch and display the latest data
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /app/update.sh
+
+[Install]
+WantedBy=multi-user.target

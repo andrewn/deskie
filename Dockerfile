@@ -52,7 +52,6 @@ COPY ./epd-fuse/epd-fuse.configuration /etc/default/epd-fuse
 COPY ./run.sh /app/run.sh
 COPY ./logo.png /app/logo.png
 
-
 # Install Chromium
 # TODO: This could be done with the other apt-get above 
 #       for efficiency
@@ -66,8 +65,18 @@ RUN apt-get clean \
     # Remove package lists to free up space
     && rm -rf /var/lib/apt/lists/*
 
-
 # Systemd please
 ENV INITSYSTEM on
+
+# Timezone
+ENV TIMEZONE Europe/Berlin
+
+# Install services to run periodically
+COPY UpdateDisplay.service /etc/systemd/system/UpdateDisplay.service
+COPY UpdateDisplay.timer /etc/systemd/system/UpdateDisplay.timer
+
+COPY ./update.sh /app/update.sh
+
+RUN systemctl enable /etc/systemd/system/UpdateDisplay.timer
 
 CMD ["bash", "/app/run.sh"]

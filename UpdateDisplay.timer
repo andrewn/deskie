@@ -1,0 +1,9 @@
+[Unit]
+Description=Fetch and display the latest data every minute
+
+[Timer]
+OnCalendar=minutely
+Persistent=true
+
+[Install]
+WantedBy=timers.target
