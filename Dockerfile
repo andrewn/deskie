@@ -70,6 +70,7 @@ ENV INITSYSTEM on
 
 # Timezone
 ENV TIMEZONE Europe/Berlin
+ENV TZ Europe/Berlin
 
 # Install services to run periodically
 COPY UpdateDisplay.service /etc/systemd/system/UpdateDisplay.service
