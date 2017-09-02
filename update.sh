@@ -1,4 +1,6 @@
-echo "Running"
+echo "Running at $(date -R)"
+
+echo "Timezone is $TZ"
 
 # Take a screenshot
 chromium --headless --disable-gpu --screenshot --window-size=169,264 https://the-day-today.glitch.me/
