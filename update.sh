@@ -3,7 +3,7 @@ echo "Running at $(date -R)"
 echo "Timezone is $TZ"
 
 # Take a screenshot
-chromium --headless --disable-gpu --screenshot --window-size=169,264 https://the-day-today.glitch.me/
+chromium --headless --disable-gpu --hide-scrollbars --screenshot --window-size=169,264 https://the-day-today.glitch.me/ 
 
 # xargs trims surrounding whitespace
 nextFileHash=$(sha1sum screenshot.png | xargs)
