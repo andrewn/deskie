@@ -1,6 +1,6 @@
 # ePaper display × ResinOS
 
-This renders [a calendar web page](https://the-day-today.glitch.me/)] screenshot every minute using headless-Chromium. The screenshot is saved at a 2.7 inch epaper display resolution (169,264 px) which is then sent to hte connected epaper display.
+This renders [a calendar web page](https://the-day-today.glitch.me/) screenshot every minute using headless-Chromium. The screenshot is saved at a 2.7 inch epaper display resolution (169,264 px) which is then sent to hte connected epaper display.
 
 Some screenshot file is hashed and the screen will not be updated if the hash matches the last image saved.
 
