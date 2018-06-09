@@ -2,8 +2,10 @@ echo "Running at $(date -R)"
 
 echo "Timezone is $TZ"
 
+APP_URL=https://the-day.today/
+
 # Take a screenshot
-chromium --headless --disable-gpu --no-sandbox --hide-scrollbars --screenshot --window-size=169,264 https://the-day-today.glitch.me/ 
+chromium --headless --disable-gpu --no-sandbox --hide-scrollbars --screenshot --window-size=169,264 $APP_URL
 
 # xargs trims surrounding whitespace
 nextFileHash=$(sha1sum screenshot.png | xargs)
