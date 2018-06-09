@@ -14,17 +14,9 @@ Although this is intended for the [PaPiRus](https://www.pi-supply.com/product/pa
 
 The [`PiSupply/PaPiRus`](https://github.com/PiSupply/PaPiRus) is nice as it gives you Python scripts for various demos and functionality. For example, `papirus-draw image.png -r 180` will render an image rotated 180 degrees to the display. `papirus-clear` will clear the display. This is in addition to the Python2.7 API.
 
-## Installation with unmanaged ResinOS
+## Installation
 
-This is tested with the open-source "unmanaged" version of [ResinOS]() that can be deployed locally.
-
-1. Follow [Getting Started](https://resinos.io/docs/raspberrypi3/gettingstarted/) to install ResinOS on a Pi.
-2. `git clone https://github.com/andrewn/resin-epaper`
-3. `cd resin-epaper`
-3. Edit the top of the `Dockerfile` to match the Pi number you want to deploy to
-4. `sudo resin local push --source .`
-5. Wait for the image to build (this will take a few mins)
-6. When the container starts, it should display `logo.png`
+To make your own Deskie, [follow the instructions in INSTALL.md](INSTALL.md).
 
 ## Credits
 
